@@ -1,5 +1,5 @@
 ---
-title: Pennions documentation
+title: Home
 layout: template
 filename: home.md
 --- 
