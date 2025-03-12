@@ -10,7 +10,7 @@
 <body>
     <nav>
         {% for page in site.html_pages %}
-        <a href={{ page.url | replace: '.html', '' }}>{{ page.title }}</a>
+        <a href={{ page.url }}>{{ page.title }}</a>
         {% endfor %}
     </nav>
     {{ content }}

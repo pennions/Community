@@ -1,0 +1,25 @@
+title: Pennions Community Hub
+baseurl: "/Community"  # Leave empty unless your site is in a subdirectory
+url: "https://pennions.github.io"  # Change to your site's URL
+
+# Permalinks (for clean URLs)
+permalink: pretty
+
+# Collections
+collections:
+  my_collection:
+    output: true
+
+# Plugins (GitHub Pages automatically includes some)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude files from the build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - "*.html"  # Optional: Exclude standalone HTML files
