@@ -9,8 +9,10 @@
 
 <body>
     <nav>
-        {% for page in site.html_pages %}
-        <a href={{ page.url | replace_first: '/', '' | replace: '.html', '' }}>{{ page.title }}</a>
+        {% for page in site.pages %}
+            {% if page.name contains '.md' %}
+            <a href="{{ page.filename }}">{{ page.title }}</a>
+            {% endif %}
         {% endfor %}
     </nav>
     {{ content }}
