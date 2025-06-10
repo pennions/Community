@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pennions Documentation</title>
-</head>
+    <style>
+        section {
+            width: 80ch;
+        }
+    </style>
+  </head>
 
-<body>
+  <body>
     <nav>
-        {% for page in site.pages %}
-            {% if page.name contains '.md' %}
-            <a href="{{ page.filename }}">{{ page.title }}</a>
-            {% endif %}
-        {% endfor %}
+      {% for page in site.pages %} {% if page.name contains '.md' %}
+      <a href="{{ page.filename }}">{{ page.title }}</a>
+      {% endif %} {% endfor %}
     </nav>
-    {{ content }}
-</body>
-
+    <section>{{ content }}</section>
+  </body>
 </html>
