@@ -177,7 +177,7 @@ When you apply a filter, after filtering is done, this event is emitted.
 
 You get the following signature object within the event:
 
-```json
+```javascript
 {
     ...
     details: {
@@ -199,8 +199,8 @@ Whenever you click a checkbox or a radiobutton, this event is emitted.
 If you have a checkbox, you will get an array back, if you have a radiobutton you only get a single id.
 
 
-```json
-{
+```javascript
+const obj = {
     ...
     details: {
                 selection: string | string[] 
@@ -218,8 +218,8 @@ How to listen to this event:
 
 **custom button event**
 
-```json
-{
+```javascript
+const obj = {
     innerHTML:"",  // the html to display in the button
     classList: []  // string[] which classes to add to the button
     event: ""      // the name of the event emitted when clicked
@@ -578,4 +578,5 @@ export default defineConfig({
 ```
 
 **External resource**
+
 [Add web components in Vue3](https://vuejs.org/guide/extras/web-components.html)
