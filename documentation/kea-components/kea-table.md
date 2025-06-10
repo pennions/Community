@@ -43,7 +43,6 @@ Replace the path to where the file is located and replace X.Y.Z with the version
 **Example:**
 ```html
 <head>
-    ...
     <script defer src="/js/kea-table-X.Y.Z.min.js"></script>
 </head>
 ```
@@ -137,7 +136,7 @@ Add the following script:
 # Apply styling
 You can apply styling within the table object:
 
-```js
+```javascript
 {
     headers: { ... },
     content: [ ... ],
@@ -160,7 +159,7 @@ All events that are emitted by ```<kea-table>```
 **loaded**
 The event 'loaded' is triggered when the element is added to the DOM. You can listen to this with an eventListener:
 
-```js
+```javascript
    const tableEl = document.getElementById('kea-table');
    tableEl.addEventListener('loaded', () => console.log("Kea Table has been loaded!"));
 ```
@@ -168,7 +167,7 @@ The event 'loaded' is triggered when the element is added to the DOM. You can li
 **rendered**
 The event 'rendered' is triggered when the element is done drawing itself. You can listen to this with an eventListener:
 
-```js
+```javascript
    const tableEl = document.getElementById('kea-table');
    tableEl.addEventListener('rendered', () => console.log("Kea Table has been fully drawn!"));
 ```
@@ -178,7 +177,7 @@ When you apply a filter, after filtering is done, this event is emitted.
 
 You get the following signature object within the event:
 
-```js
+```javascript
 {
     ...
     details: {
@@ -190,7 +189,7 @@ You get the following signature object within the event:
 
 How to listen to this event:
 
-```js
+```javascript
    const tableEl = document.getElementById('kea-table');
    tableEl.addEventListener('filter-results', (event) => console.log(event.details));
 ```
@@ -200,7 +199,7 @@ Whenever you click a checkbox or a radiobutton, this event is emitted.
 If you have a checkbox, you will get an array back, if you have a radiobutton you only get a single id.
 
 
-```js
+```javascript
 {
     ...
     details: {
@@ -212,14 +211,14 @@ If you have a checkbox, you will get an array back, if you have a radiobutton yo
 
 How to listen to this event:
 
-```js
+```javascript
    const tableEl = document.getElementById('kea-table');
    tableEl.addEventListener('row-select', (event) => console.log(event.details));
 ```
 
 **custom button event**
 
-```js
+```javascript
     {
         innerHTML:"",  // the html to display in the button
         classList: []  // string[] which classes to add to the button
@@ -234,7 +233,7 @@ See [buttons](#buttons) section for more details.
 # Caption / Footer
 You can add a Caption and or a Footer to the table by adding the following entry in the configuration:
 
-```js
+```javascript
 {
     headers: {},
     content: [],
@@ -256,7 +255,7 @@ The html and classes you provide will be automatically put in the respective ele
 # Column order and column choice
 The order you put the keys in, is the order how the columns are ordered.
 
-```js
+```javascript
 {
     headers: {
         columnB: "This column will be first",
@@ -297,7 +296,7 @@ If you add the following property to the object, the table will be filtered:
 # Selection
 If you add the following property you automatically add either checkboxes or radiobuttons to the table:
 
-```js
+```javascript
 {
     headers: { ... },
     content: { ... },
@@ -323,7 +322,7 @@ Which of the values that are inside the objects should be used to emit on select
 # Pagination
 Add the following property:
 
-```js
+```javascript
 {
     headers: { ... },
     content: { ... },
@@ -345,7 +344,7 @@ The amount of items you want to show.
 You can add buttons to the table, for example to make a CRUD table for database management.
 This is how you do it:
 
-```js
+```javascript
 {
     headers: { ... },
     content: { ... },
@@ -371,7 +370,7 @@ This is how you do it:
 By default you can click on any header to start sorting the table.
 You can also do it by default by adding the following property:
 
-```js
+```javascript
 {
     headers: { ... },
     content: { ... },
@@ -390,7 +389,7 @@ If you have multisort enabled, you can add multiple sorting objects. Else just a
 **Sorting on multiple columns**
 Default it sorts only on a single column. Add ```multiSort``` to true like this:
 
-```js
+```javascript
 {
     headers: { ... },
     content: { ... },
@@ -401,7 +400,7 @@ Default it sorts only on a single column. Add ```multiSort``` to true like this:
 
 <img src='../images/triangle-alert.png' style="position:relative;top:4px;margin-right:8px;" /> If you have dates that are not the default ```yyyy-mm-dd```, or have different seperators add a description of this to the object like so:
 
-```js
+```javascript
 {
     headers: { ... },
     content: { ... },
@@ -421,7 +420,7 @@ Default it sorts only on a single column. Add ```multiSort``` to true like this:
 # Custom cell functions
 Custom cell functions are a powerful way to customize the table cell output:
 
-```js
+```javascript
 {
     headers: { ... },
     content: { ... },
@@ -429,20 +428,21 @@ Custom cell functions are a powerful way to customize the table cell output:
     /** Object, Key: Value, Key is the exact JSON object key that is also present in the headers object, Value is a function (value, prop, object), must return a string, which will be put in the innerHTML of the td                                */
     cellFunctions: {},         
     ...
+}
 ```
 
 **Function signature**
 
 You can use ```function() {} or () => {}```, here is an example:
 
-```js
+```javascript
 {
     headers: { ... },
     content: { ... },
     cellFunctions: {
         "myColumnName": (value, property, object) => {
          ...
-        }
+        },
     ...
 }
 ```
@@ -461,7 +461,7 @@ The complete row object, so you can use any values, even the ones you do not hav
 # Configuration
 Complete overview of the options you can pass into the ```Render()``` function:
 
-```js
+```javascript
 {
     headers: {},               /** [Required] Object with Key: Value where Key is the exact JSON object key, Value is the displayed text.  */
 
@@ -560,7 +560,7 @@ In this example I will show you how to add Kea components to a Vue3 / Vite proje
 Check the corresponding manual to do that.
 
 **Vue3 example:**
-```js
+```javascript
 /** https://vite.dev/config/ */
 export default defineConfig({
   plugins: [
