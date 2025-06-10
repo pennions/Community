@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pennions Documentation</title>
     <style>
-        section {
-            width: 80ch;
-        }
+      section {
+        width: 80ch;
+      }
     </style>
+    <link rel="stylesheet" href="js\highlightjs\styles\github.min.css" />
     <script src="js\highlightjs\highlight.min.js"></script>
   </head>
 
@@ -19,5 +20,9 @@
       {% endif %} {% endfor %}
     </nav>
     <section>{{ content }}</section>
+
+    <script>
+      hljs.highlightAll();
+    </script>
   </body>
 </html>
