@@ -59,8 +59,8 @@ Add the following script:
 <body>
     ...
     <script>
-        window.onload = () => {
-            const tablecontent = {
+    window.onload = () => {
+        const tablecontent = {
             headers: {
                 ScientificName: 'Scientific name',
                 common_name: 'Common name',
@@ -126,7 +126,7 @@ Add the following script:
             };
         const tableEl = document.getElementById('kea-table');
         tableEl.Render(tablecontent);
-        }
+    }
     </script>
 </body>
 ```
@@ -137,7 +137,7 @@ Add the following script:
 You can apply styling within the table object:
 
 ```javascript
-{
+const tableOptions = {
     headers: { ... },
     content: [ ... ],
     table: {
@@ -160,16 +160,16 @@ All events that are emitted by ```<kea-table>```
 The event 'loaded' is triggered when the element is added to the DOM. You can listen to this with an eventListener:
 
 ```javascript
-   const tableEl = document.getElementById('kea-table');
-   tableEl.addEventListener('loaded', () => console.log("Kea Table has been loaded!"));
+const tableEl = document.getElementById('kea-table');
+tableEl.addEventListener('loaded', () => console.log("Kea Table has been loaded!"));
 ```
 
 **rendered**
 The event 'rendered' is triggered when the element is done drawing itself. You can listen to this with an eventListener:
 
 ```javascript
-   const tableEl = document.getElementById('kea-table');
-   tableEl.addEventListener('rendered', () => console.log("Kea Table has been fully drawn!"));
+const tableEl = document.getElementById('kea-table');
+tableEl.addEventListener('rendered', () => console.log("Kea Table has been fully drawn!"));
 ```
 
 **filter-results**
@@ -190,8 +190,8 @@ You get the following signature object within the event:
 How to listen to this event:
 
 ```javascript
-   const tableEl = document.getElementById('kea-table');
-   tableEl.addEventListener('filter-results', (event) => console.log(event.details));
+const tableEl = document.getElementById('kea-table');
+tableEl.addEventListener('filter-results', (event) => console.log(event.details));
 ```
 
 **row-select**
@@ -219,12 +219,12 @@ How to listen to this event:
 **custom button event**
 
 ```javascript
-    {
-        innerHTML:"",  // the html to display in the button
-        classList: []  // string[] which classes to add to the button
-        event: ""      // the name of the event emitted when clicked
-        order: number  // the order of which the button appears.
-    }
+{
+    innerHTML:"",  // the html to display in the button
+    classList: []  // string[] which classes to add to the button
+    event: ""      // the name of the event emitted when clicked
+    order: number  // the order of which the button appears.
+}
 ```
 
 Whatever event name you put in the object of the button, that will be emitted.
@@ -234,7 +234,7 @@ See [buttons](#buttons) section for more details.
 You can add a Caption and or a Footer to the table by adding the following entry in the configuration:
 
 ```javascript
-{
+const tableOptions = {
     headers: {},
     content: [],
     table:  {
@@ -243,7 +243,7 @@ You can add a Caption and or a Footer to the table by adding the following entry
                 captionClassList:  string[] of classes to apply to <caption> element
                 footer:  html string to be placed inside footer
                 footerClassList:  string[] of classes to apply to <tfoot> element
-               ...
+                ...
             }
     ...
 }
@@ -256,7 +256,7 @@ The html and classes you provide will be automatically put in the respective ele
 The order you put the keys in, is the order how the columns are ordered.
 
 ```javascript
-{
+const tableOptions = {
     headers: {
         columnB: "This column will be first",
         columnC: "This column will be second",
@@ -281,7 +281,7 @@ You can even add keys to the ```headers``` object that do not exist. This allows
 If you add the following property to the object, the table will be filtered:
 
 ```js
-{
+const tableOptions = {
     headers: { ... },
     content: { ... },
     filter: { 
@@ -323,7 +323,7 @@ Which of the values that are inside the objects should be used to emit on select
 Add the following property:
 
 ```javascript
-{
+const tableOptions = {
     headers: { ... },
     content: { ... },
     pagination: { 
@@ -345,7 +345,7 @@ You can add buttons to the table, for example to make a CRUD table for database 
 This is how you do it:
 
 ```javascript
-{
+const tableOptions = {
     headers: { ... },
     content: { ... },
     buttonBar: {
@@ -371,7 +371,7 @@ By default you can click on any header to start sorting the table.
 You can also do it by default by adding the following property:
 
 ```javascript
-{
+const tableOptions = {
     headers: { ... },
     content: { ... },
     order: [
@@ -401,7 +401,7 @@ Default it sorts only on a single column. Add ```multiSort``` to true like this:
 <img src='../images/triangle-alert.png' style="position:relative;top:4px;margin-right:8px;" /> If you have dates that are not the default ```yyyy-mm-dd```, or have different seperators add a description of this to the object like so:
 
 ```javascript
-{
+const tableOptions = {
     headers: { ... },
     content: { ... },
     
@@ -421,7 +421,7 @@ Default it sorts only on a single column. Add ```multiSort``` to true like this:
 Custom cell functions are a powerful way to customize the table cell output:
 
 ```javascript
-{
+const tableOptions = {
     headers: { ... },
     content: { ... },
 
@@ -436,7 +436,7 @@ Custom cell functions are a powerful way to customize the table cell output:
 You can use ```function() {} or () => {}```, here is an example:
 
 ```javascript
-{
+const tableOptions = {
     headers: { ... },
     content: { ... },
     cellFunctions: {
@@ -444,6 +444,7 @@ You can use ```function() {} or () => {}```, here is an example:
          ...
         },
     ...
+    }
 }
 ```
 
@@ -462,7 +463,7 @@ The complete row object, so you can use any values, even the ones you do not hav
 Complete overview of the options you can pass into the ```Render()``` function:
 
 ```javascript
-{
+const tableOptions = {
     headers: {},               /** [Required] Object with Key: Value where Key is the exact JSON object key, Value is the displayed text.  */
 
     content: [],               /** [Required] Array, each object is a row in the table. The Keys corresponds with the header keys.         */
@@ -571,6 +572,7 @@ export default defineConfig({
         }
       }
     }), 
+  ]
   ...
 });
 ```
