@@ -1,15 +1,25 @@
 ---
-title: Home
+title: Kea Table
 layout: template
-filename: home
+filename: kea-table
 --- 
 
 # Kea Table
 Kea Table has been designed so that you can use the styling framework or any javascript framework of your choice and still be able to just add this component.
 
 1. [Getting started](#getting-started)
-1. List of events that are emitted
-1.  [Using the component within a framework like Vue](#using-the-component-within-a-framework-like-vue)
+2. [Apply styling](#apply-styling)
+3. [Emitted events](#events)
+4. [Caption / Footer](#caption--footer)
+5. [Column order and column choice](#column-order-and-column-choice)
+6. [Filter](#filter)
+7. [Selection](#selection)
+8. [Pagination](#Pagination)
+9. [Buttons](#buttons)
+10. [Sorting](#sorting)
+11. [Custom cell functions](#custom-cell-functions)
+12. [Configuration](#configuration)
+13. [Using the component within a framework like Vue](#using-the-component-within-a-framework-like-vue)
 
 
 **Features**
@@ -30,7 +40,7 @@ Kea Table has been designed so that you can use the styling framework or any jav
 Add the .js file to your project and include it to the html file in which you want to use it.
 Replace the path to where the file is located and replace X.Y.Z with the version you currently have.
 
-*Example:*
+**Example:**
 ```html
 <head>
     ...
@@ -124,7 +134,7 @@ Add the following script:
 
 <img src='../images/triangle-alert.png' style="position:relative;top:4px;margin-right:8px;" /> By default, there is no styling applied. The component does **not** use shadow dom, so any styling to regular HTML tables is also applied here.
 
-## Apply styling
+# Apply styling
 You can apply styling within the table object:
 
 ```js
@@ -144,7 +154,7 @@ You can apply styling within the table object:
 
 You can also directly apply styling to ```<kea-table>```. By default it is rendered as ```display: inline-block;```
 
-## Events
+# Events
 All events that are emitted by ```<kea-table>```
 
 **loaded**
@@ -162,8 +172,6 @@ The event 'rendered' is triggered when the element is done drawing itself. You c
    const tableEl = document.getElementById('kea-table');
    tableEl.addEventListener('rendered', () => console.log("Kea Table has been fully drawn!"));
 ```
-
-
 
 **filter-results**
 When you apply a filter, after filtering is done, this event is emitted.
