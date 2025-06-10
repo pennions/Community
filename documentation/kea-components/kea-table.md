@@ -177,7 +177,7 @@ When you apply a filter, after filtering is done, this event is emitted.
 
 You get the following signature object within the event:
 
-```javascript
+```json
 {
     ...
     details: {
@@ -199,7 +199,7 @@ Whenever you click a checkbox or a radiobutton, this event is emitted.
 If you have a checkbox, you will get an array back, if you have a radiobutton you only get a single id.
 
 
-```javascript
+```json
 {
     ...
     details: {
@@ -218,7 +218,7 @@ How to listen to this event:
 
 **custom button event**
 
-```javascript
+```json
 {
     innerHTML:"",  // the html to display in the button
     classList: []  // string[] which classes to add to the button
@@ -297,7 +297,7 @@ const tableOptions = {
 If you add the following property you automatically add either checkboxes or radiobuttons to the table:
 
 ```javascript
-{
+const tableOptions = {
     headers: { ... },
     content: { ... },
     selectionBar: {
@@ -390,7 +390,7 @@ If you have multisort enabled, you can add multiple sorting objects. Else just a
 Default it sorts only on a single column. Add ```multiSort``` to true like this:
 
 ```javascript
-{
+const tableOptions = {
     headers: { ... },
     content: { ... },
     multiSort: true
