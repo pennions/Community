@@ -2,7 +2,7 @@
 title: Pennions documentation
 description: >- 
   A documentation site built with GitHub Pages and Jekyll.
-baseurl: "" # the subpath of your site, e.g. /docs
+baseurl: "/Community" # the subpath of your site, e.g. /docs
 url: ""     # the base hostname & protocol, e.g. https://example.com
 
 theme: minima
