@@ -1,6 +1,3 @@
----
-chapter: Kea Components
----
 Hi im a test
 
 # 1
