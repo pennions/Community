@@ -1,26 +1,27 @@
 ---
+chapter: Kea Components
+icon: "KeaLogo.png"
 title: Kea Table
 layout: template
 filename: kea-table
+toc:
+    - Getting started
+    - Apply styling
+    - Emitted events
+    - Caption and Footer
+    - Column order and column choice
+    - Filter
+    - Selection
+    - Pagination
+    - Buttons
+    - Sorting
+    - Custom cell functions
+    - Configuration
+    - Use with a framework like Vue
 --- 
 
 # Kea Table
 Kea Table has been designed so that you can use the styling framework or any javascript framework of your choice and still be able to just add this component.
-
-1. [Getting started](#getting-started)
-2. [Apply styling](#apply-styling)
-3. [Emitted events](#events)
-4. [Caption / Footer](#caption--footer)
-5. [Column order and column choice](#column-order-and-column-choice)
-6. [Filter](#filter)
-7. [Selection](#selection)
-8. [Pagination](#Pagination)
-9. [Buttons](#buttons)
-10. [Sorting](#sorting)
-11. [Custom cell functions](#custom-cell-functions)
-12. [Configuration](#configuration)
-13. [Using the component within a framework like Vue](#using-the-component-within-a-framework-like-vue)
-
 
 **Features**
 * Supports vanilla js or any js framework like Vue
@@ -131,7 +132,7 @@ Add the following script:
 </body>
 ```
 
-<img src='../images/triangle-alert.png' style="position:relative;top:4px;margin-right:8px;" /> By default, there is no styling applied. The component does **not** use shadow dom, so any styling to regular HTML tables is also applied here.
+<img class="inline-block" src='../images/triangle-alert.png' style="position:relative;top:4px;margin-right:8px;" /> By default, there is no styling applied. The component does **not** use shadow dom, so any styling to regular HTML tables is also applied here.
 
 # Apply styling
 You can apply styling within the table object:
@@ -153,7 +154,7 @@ const tableOptions = {
 
 You can also directly apply styling to ```<kea-table>```. By default it is rendered as ```display: inline-block;```
 
-# Events
+# Emitted Events
 All events that are emitted by ```<kea-table>```
 
 **loaded**
@@ -230,7 +231,7 @@ const obj = {
 Whatever event name you put in the object of the button, that will be emitted.
 See [buttons](#buttons) section for more details.
 
-# Caption / Footer
+# Caption and Footer
 You can add a Caption and or a Footer to the table by adding the following entry in the configuration:
 
 ```javascript
@@ -249,7 +250,7 @@ const tableOptions = {
 }
 ```
 
-<img src='../images/triangle-alert.png' style="position:relative;top:4px;margin-right:8px;" /> You do not need to add ```<caption></caption>``` or ```<footer></footer```  as html. 
+<img class="inline-block" src='../images/triangle-alert.png' style="position:relative;top:4px;margin-right:8px;" /> You do not need to add ```<caption></caption>``` or ```<footer></footer>```  as html. 
 The html and classes you provide will be automatically put in the respective element.
 
 # Column order and column choice
@@ -310,13 +311,13 @@ const tableOptions = {
     ...
 }
 ```
-**location**
+**location** <br/>
 If you want the checkboxes or radiobuttons want to have at the left or right side of the table
 
-**classList**
+**classList** <br/>
 If you want to style the checkbox in a certain way, you can add the classes and they will be added to the inputs.
 
-**selectionProperty**
+**selectionProperty** <br/>
 Which of the values that are inside the objects should be used to emit on selection. Should be unique to identify the correct row.
 
 # Pagination
@@ -334,10 +335,10 @@ const tableOptions = {
 }
 ```
 
-**page**
+**page** <br/>
 The page you want to show, starting at 1.
 
-**itemsPerPage**
+**itemsPerPage** <br/>
 The amount of items you want to show.
 
 # Buttons
@@ -386,7 +387,7 @@ const tableOptions = {
 
 If you have multisort enabled, you can add multiple sorting objects. Else just add only one object to the array.
 
-**Sorting on multiple columns**
+**Sorting on multiple columns** <br/>
 Default it sorts only on a single column. Add ```multiSort``` to true like this:
 
 ```javascript
@@ -398,7 +399,7 @@ const tableOptions = {
 }
 ```
 
-<img src='../images/triangle-alert.png' style="position:relative;top:4px;margin-right:8px;" /> If you have dates that are not the default ```yyyy-mm-dd```, or have different seperators add a description of this to the object like so:
+<img class="inline-block" src='../images/triangle-alert.png' style="position:relative;top:4px;margin-right:8px;" /> If you have dates that are not the default ```yyyy-mm-dd```, or have different seperators add a description of this to the object like so:
 
 ```javascript
 const tableOptions = {
@@ -431,8 +432,7 @@ const tableOptions = {
 }
 ```
 
-**Function signature**
-
+**Function signature** <br/>
 You can use ```function() {} or () => {}```, here is an example:
 
 ```javascript
@@ -448,15 +448,15 @@ const tableOptions = {
 }
 ```
 
-**value**
+**value** <br/>
 A string that is the original value, if you use a non-existent key, it is empty. 
 
-**property**
+**property** <br/>
 The key of the object that this function belongs to. if you access ```object[property]``` you get the processed value, 
 so if you access a property that also has a custom function and you access that from the object, 
 you get the processed version. This is due to the fact that the table is pre-processed to enable full filtering.
 
-**object**
+**object** <br/>
 The complete row object, so you can use any values, even the ones you do not have in the ```header```.
 
 # Configuration
@@ -468,7 +468,8 @@ const tableOptions = {
 
     content: [],               /** [Required] Array, each object is a row in the table. The Keys corresponds with the header keys.         */
 
-    contentMetadata: {},       /** [Optional] Used for sorting. Object with Key: Value, Key is the exact JSON object key, Value is an Object with type, format and separator (for date), types supported: date 
+    contentMetadata: {},       /** [Optional] Used for sorting. Object with Key: Value, Key is the exact JSON object key, 
+                                *  Value is an Object with type, format and separator (for date), types supported: date 
                                 *  example date would be 12-31-2025 
                                 *  myDateColumn: {
                                 *                  type: "date",
@@ -480,8 +481,12 @@ const tableOptions = {
     buttonBar: {},             /** [Optional] Adds a button bar.
                                 *  Object   {
                                 *              location: left/right,
-                                *              tableRowClassList: string[] which classes to add to the table row, for example to make the buttons only available on hover
-                                *              rowIdProperty: the exact name of the object key that will be emitted when the button is clicked
+                                *              tableRowClassList: string[] which classes to add to the table row, 
+                                *              for example to make the buttons only available on hover
+                                * 
+                                *              rowIdProperty: the exact name of the object key that will be emitted 
+                                *              when the button is clicked
+                                * 
                                 *              buttonBarClassList: string[] which classes to add to the buttonbar div.
                                 *              buttons: [
                                 *                          {
@@ -494,7 +499,8 @@ const tableOptions = {
                                 *           }
                                 */
     
-    selectionBar: {},          /** [Optional] Adds checkboxes or radiobuttons. I case of checkboxes, there will be also one in the header for 'select all'
+    selectionBar: {},          /** [Optional] Adds checkboxes or radiobuttons. I case of checkboxes, 
+                                *  there will be also one in the header for 'select all'
                                 *  Object   {
                                 *              location: left/right,
                                 *              classList: string[]        // which classes to add to the checkbox,
@@ -506,13 +512,17 @@ const tableOptions = {
 
     cellFunctions: {},         /** [Optional]
                                 *  Object, Key: Value
-                                *  Key is the exact JSON object key, Value is a function (value, prop, object), must return a string, which will be put in the innerHTML of the td
+                                *  Key is the exact JSON object key, Value is a function (value, prop, object), must return a string,
+                                *  which will be put in the innerHTML of the td
                                 */
 
     sortingFunction: function, /** [Optional]
                                 *  Object, Key: Value
-                                *  Key is the exact JSON object key, Value is a sorting function (jsonArray, sortDetails[{propertyName: string, descending: true/false }], metadata = null), must return a function (a, b) which must return 1, 0 or -1
-                                *  By default it can sort a lot of values, for dates you can use the contentMetadata to further enhance sorting.
+                                *  Key is the exact JSON object key, Value is a sorting function 
+                                *  params: (jsonArray, sortDetails[{propertyName: string, descending: true/false }], metadata = null), 
+                                *  must return a function (a, b) which must return 1, 0 or -1
+                                *  By default it can sort a lot of values, for dates you can use the contentMetadata to 
+                                *  further enhance sorting.
                                 */
     
     table: {},                 /** [Optional]
@@ -522,7 +532,8 @@ const tableOptions = {
                                 *              captionClassList:  string[] of classes to apply to <caption> element
                                 *              footer:  html string to be placed inside footer
                                 *              footerClassList:  string[] of classes to apply to <tfoot> element
-                                *              emptyResultsText: Text to display when there are no results, for example when filter has no results
+                                *              emptyResultsText: Text to display when there are no results, 
+                                *              for example when filter has no results
                                 *          }
                                 */
 
@@ -541,8 +552,9 @@ const tableOptions = {
     filter: {},                /** [Optional]
                                 *  Object { 
                                 *              match: string, 
-                                *              caseSensitive: true/false,   // if not provided, defaults to false
-                                *              property: ""                 // If provided, will search only in given colum, defaults to all columns
+                                *              caseSensitive: true/false, // if not provided, defaults to false
+                                *              property: ""               // If provided, will search only in given colum, 
+                                *                                            defaults to all columns
                                 *         }
                                 */
 
@@ -555,7 +567,7 @@ const tableOptions = {
 }
 ```
 
-# Using the component within a framework like Vue
+# Use with a framework like Vue
 Kea components are a result of years of development to be flexible and can be used in any modern frontend framework.
 In this example I will show you how to add Kea components to a Vue3 / Vite project. This can also be done with other frameworks.
 Check the corresponding manual to do that.

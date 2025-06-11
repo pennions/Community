@@ -4,23 +4,123 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pennions Documentation</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/avian.min.css' | relative_url }}" />
+
     <link
       rel="stylesheet"
       href="{{ '/assets/css/rouge-github.css' | relative_url }}" />
 
     <style>
+      a.active {
+        color: var(--primary);
+        text-decoration: underline;
+      }
+
+      code {
+        background-color: var(--code-background);
+      }
+
+      pre {
+        background-color: #fff !important;
+      }
+
+      pre > code {
+        font-family: monospace;
+        display: inline-block;
+        width: 90%;
+        overflow: auto;
+        padding: 1rem 2rem !important;
+      }
+
+      .main-nav {
+        height: 5vh;
+        margin-bottom: 1.5rem;
+      }
+
+      .toc-container {
+        width: 15vw;
+        max-width: 15vw;
+      }
+
+      .content-container {
+        max-width: 84vw !important;
+        width: 84vw !important;
+        height: calc(94vh - 1.5rem);
+        overflow: auto;
+      }
+
+      .content-icon-container {
+        border: 2px solid black;
+        border-radius: 100px;
+        padding: 2rem;
+        max-width: 70%;
+        margin: 2rem auto;
+      }
+
       p {
-        width: 80ch;
+        max-width: fit-content;
+      }
+
+      .content-container h1 {
+        position: relative;
+        background-color: var(--primary);
+        color: var(--color-on-primary);
+        width: fit-content;
+        padding: 0 2rem 0 1rem;
+        border-top-right-radius: 20px;
+      }
+
+      .content-container h1::after {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 75vw;
+        height: 2px;
+        background-color: var(--primary);
+        margin-left: -1rem;
+      }
+
+      h1:not(:first-child) {
+        margin-top: 2rem;
       }
     </style>
   </head>
 
   <body>
-    <nav>
-      {% for page in site.pages %} {% if page.name contains '.md' %}
-      <a href="{{ page.filename }}">{{ page.title }}</a>
-      {% endif %} {% endfor %}
+    <nav class="pl-2 main-nav bg-white shadow-bottom row align-center gap-2">
+      {% for p in site.pages %} {% if p.name contains '.md' %} {% if p.url ==
+      page.url %}
+      <a href="{{ p.url | relative_url }}" class="button active">
+        {{ p.title | default: p.name }}
+      </a>
+      {% elsif p.chapter == page.chapter %}
+      <a class="button" href="{{ p.url | relative_url }}">
+        {{ p.title | default: p.name }}
+      </a>
+      {% endif %}{% endif %} {% endfor %}
     </nav>
-    <section>{{ content }}</section>
+
+    <section class="row gap-3">
+      <nav class="toc-container px-2 bg-white shadow">
+        <h1 class="ml-1">{{ page.chapter }}</h1>
+        <div class="content-icon-container">
+          <img class="content-icon" src="/images/{{ page.icon }}" />
+        </div>
+        <h2 class="ml-1 mb-2">{{ page.title }}</h2>
+        <hr />
+        <ul class="ml-1 list-style-none column gap-1">
+          {% for item in page.toc %} {% assign id = item | downcase | replace: '
+          ', '-' %}
+          <li><a href="#{{ id }}">{{ item }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <article class="content-container shadow column gap-3 bg-white p-3">
+        {{ content }}
+      </article>
+    </section>
   </body>
 </html>
