@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pennions Documentation</title>
-    <link rel="icon" type="image/x-icon" href="/Community/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/Community/favicon.ico" />
 
     <link
       rel="stylesheet"
@@ -37,7 +37,7 @@
       }
 
       .main-nav {
-        height: 5vh;
+        height: 50px;
         margin-bottom: 1.5rem;
       }
 
@@ -87,6 +87,68 @@
       h1:not(:first-child) {
         margin-top: 2rem;
       }
+
+      .to-top {
+        display: none;
+      }
+
+      @media only screen and (max-width: 1498px) {
+        .toc-container {
+          display: flex;
+          width: 100%;
+          max-width: 100%;
+          gap: 3rem;
+          padding-bottom: 2rem;
+        }
+
+        .header-container {
+          width: 25%;
+          min-width: 200px;
+        }
+
+        .content-icon {
+          max-height: 200px;
+        }
+
+        .toc {
+          width: 100%;
+        }
+
+        .toc ul {
+          display: flex;
+          width: 100%;
+          flex-wrap: wrap;
+          flex-direction: row;
+          gap: 2rem;
+        }
+
+        .content-container {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: unset;
+          max-height: unset;
+          overflow: initial;
+        }
+
+        .content-container h1::after {
+          width: 87vw;
+        }
+
+        html:not([data-scroll='0']) .to-top {
+          position: fixed;
+          display: block;
+          bottom: 1rem;
+          right: 1rem;
+          background-color: var(--primary);
+          color: var(--color-on-primary);
+          height: 5rem;
+          width: 5rem;
+          text-align: center;
+          line-height: 4.6rem;
+          border-radius: 100px;
+          text-decoration: none;
+        }
+      }
     </style>
   </head>
 
@@ -106,22 +168,40 @@
 
     <section class="row gap-3">
       <nav class="toc-container px-2 bg-white shadow">
-        <h1 class="ml-1">{{ page.chapter }}</h1>
-        <div class="content-icon-container">
-          <img class="content-icon" src="/Community/images/{{ page.icon }}" />
+        <div class="header-container">
+          <h1 class="ml-1">{{ page.chapter }}</h1>
+          <div class="content-icon-container">
+            <img class="content-icon" src="/Community/images/{{ page.icon }}" />
+          </div>
         </div>
-        <h2 class="ml-1 mb-2">{{ page.title }}</h2>
-        <hr />
-        <ul class="ml-1 list-style-none column gap-1">
-          {% for item in page.toc %} {% assign id = item | downcase | replace: '
-          ', '-' %}
-          <li><a href="#{{ id }}">{{ item }}</a></li>
-          {% endfor %}
-        </ul>
+        <div class="toc">
+          <h2 class="ml-1 mb-2">{{ page.title }}</h2>
+          <hr />
+          <ul class="ml-1 list-style-none column gap-1">
+            {% for item in page.toc %} {% assign id = item | downcase | replace:
+            ' ', '-' %}
+            <li><a href="#{{ id }}">{{ item }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
       </nav>
       <div class="content-container shadow column gap-3 bg-white p-3">
         {{ content }}
       </div>
+
+      <a href="#" class="to-top"><span>Top ↑</span></a>
     </section>
+
+    <script>
+      document.addEventListener(
+        'scroll',
+        () => {
+          document.documentElement.dataset.scroll = window.scrollY;
+        },
+        {
+          passive: true,
+        }
+      );
+    </script>
   </body>
 </html>
