@@ -24,6 +24,7 @@ toc:
 Kea Table has been designed so that you can use the styling framework or any javascript framework of your choice and still be able to just add this component.
 
 **Features**
+
 * Supports vanilla js or any js framework like Vue
 * Supports regular css or any styling framework like Bootstrap
 * Sorting: single column or even multiple columns at the same time
