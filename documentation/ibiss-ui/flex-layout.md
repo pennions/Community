@@ -1,5 +1,6 @@
 ---
 chapter: Ibiss UI
+index: ibiss-ui
 icon: "IbissUI.png"
 title: Flex layout
 layout: template

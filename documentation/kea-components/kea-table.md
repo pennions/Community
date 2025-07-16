@@ -1,5 +1,6 @@
 ---
 chapter: Kea Components
+index: kea-components
 icon: "KeaLogo.png"
 title: Kea Table
 layout: template
