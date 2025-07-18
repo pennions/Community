@@ -115,6 +115,10 @@
       }
 
       @media only screen and (max-width: 1498px) {
+        table code {
+          padding: 0;
+        }
+
         .toc-container {
           display: flex;
           width: 100%;
@@ -153,7 +157,6 @@
           max-width: 100% !important;
           height: unset;
           max-height: unset;
-          overflow: initial;
         }
 
         .content-container h1::after {
@@ -189,11 +192,8 @@
         <option selected="selected" value="{{p.url}}">
           {{ p.title | default: p.name }}
         </option>
-        {% if p.url != page.url %} {% if p.url != indexPage %}
-
-        <option {% endif %} value="{{p.url}}">
-          {{ p.url}} {{ p.title | default: p.name }}
-        </option>
+        {% endif %} {% if p.url != page.url %} {% if p.url != indexPage %}
+        <option value="{{p.url}}">{{ p.title | default: p.name }}</option>
         {% endif %}{% endif %} {% endif %} {% endif %} {% endfor %}
       </select>
       <div>

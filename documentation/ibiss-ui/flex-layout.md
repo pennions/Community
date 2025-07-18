@@ -13,7 +13,6 @@ toc:
     - Justify and Align
     - Align self
     - Flex width
-
 --- 
 
 # Flex layout
