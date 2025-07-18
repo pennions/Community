@@ -1,5 +1,6 @@
 ---
 chapter: Ibiss UI
+index: ibiss-ui
 icon: "IbissUI.png"
 title: Flex layout
 layout: template
@@ -12,7 +13,6 @@ toc:
     - Justify and Align
     - Align self
     - Flex width
-
 --- 
 
 # Flex layout

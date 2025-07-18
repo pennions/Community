@@ -1,2 +1,96 @@
-<a href="kea-components/kea-table">Kea Table</a>
-<a href="ibiss-ui/flex-layout">Flex Layout</a>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Ibiss UI</title>
+    <link rel="icon" type="image/x-icon" href="/Community/favicon.ico" />
+    <link rel="stylesheet" href="/Community//assets/css/ibiss-ui.min.css" />
+
+    <style>
+      .ibiss-logo {
+        width: 8%;
+      }
+      .ibissui-logo,
+      .kea-logo {
+        height: 80%;
+        max-height:250px;
+      }
+
+      .card {
+        height: 35dvh;
+        width: 28rem;
+        /* width: auto; */
+        /* max-width: fit-content; */
+        border-radius: 2rem;
+        background: linear-gradient(
+          to bottom right,
+          rgba(0, 120, 212, 0.3),
+          rgba(0, 120, 212, 0.15)
+        );
+        transition: transform 1s ease;
+      }
+
+      .card a {
+        text-decoration: none;
+      }
+
+      .card:hover {
+        transform: scale(1.1);
+        border: 1px solid var(--hr-color);
+      }
+
+      .card:hover a {
+        text-decoration: none;
+      }
+
+      .card-row {
+        height: 100%;
+        align-self: center;
+      }
+
+      .link-card {
+        height: 100%;
+      }
+
+      .index {
+        height: 100dvh;
+      }
+
+      .tag {
+        border-radius: 4px;
+      }
+
+      body {
+        background-image: url("/Community/images/pexels-sonny-vermeer-505472791-20061678.jpg");
+        background-size:cover;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="index column">
+      <header class="p-5 row align-center gap-5 shadow-bottom bg-white">
+        <h1>Ibiss UI Documentation</h1>
+      </header>
+
+      <section class="card-row row justify-center align-center gap-5">
+        <div class="card shadow">
+          <a
+            href="ibiss-ui/"
+            class="link-card column align-center justify-around">
+            <img src="/Community/images/IbissUI.png" class="ibissui-logo" />
+            <span class="tag bg-white p-1 px-2 shadow">Go to Ibiss UI CSS</span>
+          </a>
+        </div>
+        <div class="card shadow">
+          <a
+            href="kea-components/"
+            class="link-card column align-center justify-around">
+            <img src="/Community/images/KeaLogo.png" class="kea-logo" />
+            <span class="tag bg-white p-1 px-2 shadow">Go to Kea Components</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

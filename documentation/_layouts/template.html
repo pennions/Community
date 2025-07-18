@@ -3,13 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pennions Documentation</title>
+    <title>{{page.title}} - {{page.chapter}}</title>
     <link rel="icon" type="image/x-icon" href="/Community/favicon.ico" />
-
     <link
       rel="stylesheet"
       href="{{ '/assets/css/ibiss-ui.min.css' | relative_url }}" />
-
     <link
       rel="stylesheet"
       href="{{ '/assets/css/rouge-github.css' | relative_url }}" />
@@ -17,7 +15,7 @@
     <style>
       body {
         height: auto;
-        min-height: 90svh;
+        min-height: 100svh;
       }
 
       a.active {
@@ -44,11 +42,9 @@
 
       .main-nav {
         height: 50px;
-        margin-bottom: 1.5rem;
       }
 
       footer {
-        margin-top: auto;
         height: 3rem;
       }
 
@@ -60,14 +56,14 @@
       .content-container {
         max-width: 84vw !important;
         width: 84vw !important;
-        height: calc(94vh - 5.5rem);
-        min-height: calc(94vh - 5.5rem);
+        height: calc(95vh - 6.2rem);
+        min-height: calc(95vh - 6.2rem);
         overflow: auto;
       }
 
       .content-icon-container {
         border: 2px solid black;
-        border-radius: 100px;
+        border-radius: 500px;
         padding: 2rem;
         max-width: 70%;
         margin: 2rem auto;
@@ -102,19 +98,27 @@
 
       .lucide {
         position: relative;
-        top:2px;
+        top: 2px;
       }
 
       .lucide-hand-heart-icon {
-        top:3px;
+        top: 3px;
       }
 
       .header-link {
         text-decoration: none;
-        color:black;
+        color: black;
+      }
+
+      nav > select {
+        min-height: 42px;
       }
 
       @media only screen and (max-width: 1498px) {
+        table code {
+          padding: 0;
+        }
+
         .toc-container {
           display: flex;
           width: 100%;
@@ -153,7 +157,6 @@
           max-width: 100% !important;
           height: unset;
           max-height: unset;
-          overflow: initial;
         }
 
         .content-container h1::after {
@@ -178,25 +181,73 @@
     </style>
   </head>
 
-  <body>
-    <nav class="pl-2 pr-1 main-nav bg-white shadow-bottom row align-center justify-between gap-2 sticky">
+  <body class="column gap-3">
+    <nav
+      class="pl-1 pr-1 main-nav bg-white shadow-bottom row align-center justify-between gap-2 sticky">
+      {% assign indexPage = "/" | append: page.index | append: "/" %}
+
       <select id="component-selector" selected="selected">
         {% for p in site.pages %} {% if p.name contains '.md' %} {% if p.chapter
-        == page.chapter %}
-        <option 
-        {% if p.url == page.url %}
-        selected="selected"
-        {% endif %}
-        value="{{p.url}}">{{ p.title | default: p.name }}</option>
-        {% endif %} {% endif %} {% endfor %}
+        == page.chapter %} {% if p.url == page.url %}
+        <option selected="selected" value="{{p.url}}">
+          {{ p.title | default: p.name }}
+        </option>
+        {% endif %} {% if p.url != page.url %} {% if p.url != indexPage %}
+        <option value="{{p.url}}">{{ p.title | default: p.name }}</option>
+        {% endif %}{% endif %} {% endif %} {% endif %} {% endfor %}
       </select>
       <div>
-        <a class="button" href="https://patreon.com/pennions" title="Become a Patron" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hand-heart-icon lucide-hand-heart mr-2"><path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 15 6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z"/></svg><span>Support us</span></a>
-        <a class="button border" href="https://github.com/pennions/Community/issues/new" title="Go to GitHub to create an issue" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github-icon lucide-github mr-1"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg><span>Ask for help</span></a>
+        <a
+          class="button"
+          href="https://patreon.com/pennions"
+          title="Become a Patron"
+          target="_blank"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-hand-heart-icon lucide-hand-heart mr-2">
+            <path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16" />
+            <path
+              d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9" />
+            <path d="m2 15 6 6" />
+            <path
+              d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z" />
+          </svg>
+          <span>Support us</span>
+        </a>
+        <a
+          class="button border"
+          href="https://github.com/pennions/Community/issues/new"
+          title="Go to GitHub to create an issue"
+          target="_blank"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-github-icon lucide-github mr-1">
+            <path
+              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+            <path d="M9 18c-4.51 2-5-2-7-2" />
+          </svg>
+          <span>Ask for help</span>
+        </a>
       </div>
     </nav>
-<div>
-    <section class="row gap-3">
+
+    <section class="row gap-3 page-content">
       <nav class="toc-container px-2 bg-white shadow">
         <div class="header-container">
           <h1 class="ml-1">{{ page.chapter }}</h1>
@@ -204,44 +255,41 @@
             <img class="content-icon" src="/Community/images/{{ page.icon }}" />
           </div>
         </div>
+
         <div class="toc">
           <h2 class="ml-1 mb-2">{{ page.title }}</h2>
-          <hr class="mb-2" />
-          <a href="/Community/" class="ml-1">Back to index</a>
+          <hr class="mb-3" />
+          <a href="/Community/{{ page.index }}" class="ml-1">Back to index</a>
           <hr class="my-3" />
           <ul class="ml-1 list-style-none column gap-1">
             {% for item in page.toc %} {% assign id = item | downcase | replace:
-            ' ', '-' %}
-            
-            {% assign title = item | slice: 1, 999  %}
-            {% assign first_char = item | slice: 0, 1 %}
-
-            {% if first_char  == "=" %}
-            {% assign title_id = id | slice: 1, 999  %}
-              <a href="#{{ title_id }}" class="header-link"> <b class="font-size-20">{{ title }}</b></a>
+            ' ', '-' %} {% assign title = item | slice: 1, 999 %} {% assign
+            first_char = item | slice: 0, 1 %} {% if first_char == "=" %} {%
+            assign title_id = id | slice: 1, 999 %}
+            <a href="#{{ title_id }}" class="header-link">
+              <b class="font-size-20">{{ title }}</b></a
+            >
             {% else %}
 
             <li><a href="#{{ id }}">{{ item }}</a></li>
-            {% endif %}
-
-            {% endfor %}
+            {% endif %} {% endfor %}
           </ul>
         </div>
       </nav>
-      <div class="content-container shadow column gap-3 bg-white p-3">
+      <div class="content-container shadow column gap-3 bg-white p-2">
         {{ content }}
       </div>
 
-      <footer
-        class="bg-white shadow-top f-100 row justify-between px-3 align-center">
-        <span>
-          Created by
-          <a href="https://www.pennions.com" target="_blank">Pennions.com</a>
-        </span>
-        <span id="footer-tag"></span>
-      </footer>
       <a href="#" class="to-top"><span>Top ↑</span></a>
     </section>
+    <footer
+      class="bg-white shadow-top row justify-between px-3 align-center mt-auto">
+      <span>
+        Created by
+        <a href="https://www.pennions.com" target="_blank">Pennions.com</a>
+      </span>
+      <span id="footer-tag"></span>
+    </footer>
 
     <script>
       document.addEventListener(
@@ -266,11 +314,12 @@
 
         document.getElementById('footer-tag').innerText = textToShow;
 
-        document.getElementById('component-selector').addEventListener('change',( e) => {
-          location.replace(`/Community${e.target.value}`);
-        })
+        document
+          .getElementById('component-selector')
+          .addEventListener('change', (e) => {
+            location.replace(`/Community${e.target.value}`);
+          });
       };
     </script>
-    </div>
   </body>
 </html>
