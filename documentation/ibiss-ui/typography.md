@@ -5,6 +5,8 @@ icon: "IbissUI.png"
 title: Typography
 layout: template
 filename: typography
+toc: 
+    - Other classes and examples
 --- 
 
 # Typography
@@ -35,7 +37,7 @@ There are also corresponding classnames, so you can keep semantic headers like h
 | <span>Text</span><sub>subtext</sub>            |                                                           |```<sub>subtext</sub>```                               |
 {: .table .font-table .align-middle }
 
-# Other classes
+# Other classes and examples
 {: .my-4 }
 
 
