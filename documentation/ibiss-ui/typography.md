@@ -35,7 +35,7 @@ There are also corresponding classnames, so you can keep semantic headers like h
 | <mark>Marked</mark>                            |                                                           |```<mark>Marked</mark>```                              |
 | <span>Text</span><sup>supertext</sup>          |                                                           |```<sup>supertext</sup>```                             |
 | <span>Text</span><sub>subtext</sub>            |                                                           |```<sub>subtext</sub>```                               |
-{: .table .font-table .align-middle }
+{: .table .example-table .align-middle }
 
 # Other classes and examples
 {: .my-4 }
@@ -47,5 +47,5 @@ There are also corresponding classnames, so you can keep semantic headers like h
 | <h1 class="font-weight-normal">Header normal</h1> | font-weight-normal      | ```<h1 class="font-weight-normal">Header normal</h1>```                              |
 | <span class="font-weight-bold">Span with bold text</span> | font-weight-bold| ```<span class="font-weight-bold">Span with bold text</span>```                      |
 | <h6 class="h1 font-weight-bold">h6 with h1 and font-weight-bold class</h6> |      | ```<h6 class="h1 font-weight-bold">h6 with h1 and font-weight-bold class</h6>```|
-{: .table .font-table .align-middle}
+{: .table .example-table .align-middle}
 

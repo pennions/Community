@@ -8,9 +8,11 @@ filename: utilities
 toc: 
     - Paddings
     - Margins
-    - Responsive Hide and Show
     - Shadows
+    - Borders
     - Cursors
+    - =Display
+    - Responsive Hide and Show
     - =Colors
     - Text and Icons
     - Borders
@@ -194,11 +196,73 @@ These are the default sizes, you can adjust them with CSS variables:
 | my-auto         | margin-top: auto; <br/> margin-bottom: auto;  | tmy-auto <br/> mmy-auto  |
 {: .table }
 
-# Responsive Hide and Show
-
 # Shadows
 
+| Example                                                  | Class | Code                                                        | 
+| :-------------                                           |:--- |:-------------------------                                 |
+| <div class="shadow py-5 px-3 my-3 mr-3">Element with shadow</div>| shadow   |```<div class="shadow py-5 px-3">Element with shadow</div>``` |
+| <div class="shadow-top py-5 px-3 my-3 mr-3">Element with shadow on top</div>| shadow-top   |```<div class="shadow py-5 px-3">Element with shadow on top</div>``` |
+| <div class="shadow-left py-5 px-3 my-3 mr-3">Element with shadow on left</div> | shadow-left   |```<div class="shadow py-5 px-3">Element with shadow on the left</div>``` |
+| <div class="shadow-right py-5 px-3 my-3 mr-3">Element with shadow on right</div>|shadow-right   |```<div class="shadow py-5 px-3">Element with shadow on the right</div>``` |
+| <div class="shadow-bottom py-5 px-3 my-3 mr-3">Element with shadow on bottom</div>|shadow-bottom   |```<div class="shadow py-5 px-3">Element with shadow on the bottom</div>``` |
+|||
+|  **Large variants**       | |
+| <div class="shadow-lg py-5 px-3 my-3 mr-3">Element with large shadow</div>| shadow-lg   |```<div class="shadow-lg py-5 px-3">Element with large shadow</div>``` |
+| <div class="shadow-lg-top py-5 px-3 my-3 mr-3">Element with large shadow on top</div>| shadow-lg-top   |```<div class="shadow-lg-top py-5 px-3">Element with large shadow on top</div>``` |
+| <div class="shadow-lg-left py-5 px-3 my-3 mr-3">Element with large shadow on left</div>| shadow-lg-left   |```<div class="shadow-lg-left py-5 px-3">Element with large shadow on the left</div>``` |
+| <div class="shadow-lg-right py-5 px-3 my-3 mr-3">Element with large shadow on right</div>| shadow-lg-right   |```<div class="shadow-lg-right py-5 px-3">Element with large shadow on the right</div>``` |
+| <div class="shadow-lg-bottom py-5 px-3 my-3 mr-3">Element with large shadow on bottom</div>| shadow-lg-bottom   |```<div class="shadow-lg-bottom py-5 px-3">Element with large shadow on the bottom</div>``` |
+{: .table .example-table }
+
+# Borders 
+
+| Example                                                                           | Class        | Code |
+| :------------- | :-------------------------                                       |:--| :-----------------------         |
+| <div class="border py-5 px-3 my-3 mr-3">Element with border</div>                      | border   |```<div class="border py-5 px-3">Element with border</div>``` |
+| <div class="border-top py-5 px-3 my-3 mr-3">Element with border on top</div>           | border-top   |```<div class="border-top py-5 px-3">Element with border on top</div>``` |
+| <div class="border-left py-5 px-3 my-3 mr-3">Element with border on the left</div>     | border-left   |```<div class="border-left py-5 px-3">Element with border on the left</div>``` |
+| <div class="border-right py-5 px-3 my-3 mr-3">Element with border on the right</div>   | border-right   |```<div class="border-right py-5 px-3">Element with border on the right</div>``` |
+| <div class="border-bottom py-5 px-3 my-3 mr-3">Element with border on the bottom</div> | border-bottom   |```<div class="border-bottom py-5 px-3">Element with border on the bottom</div>``` |
+{: .table .example-table }
+
 # Cursors
+
+| Example        |Class|  Code                                                        | 
+| :------------- |:---------------------- | :-------------------------                                 |
+| <div class="border p-1 pl-3 cursor-not-allowed">Hover me, cursor turns to not allowed</div>  | cursor-not-allowed | ```<div class="border p-1 pl-3 cursor-not-allowed">Hover me, cursor turns to not allowed</div>``` |
+| <div class="border p-1 pl-3 cursor-pointer">Hover me, cursor turns to pointer</div>| cursor-pointer | ```<div class="border p-1 pl-3 cursor-pointer">Hover me, cursor turns to pointer</div>```|
+| <div class="border p-1 pl-3 cursor-grab">Hover me, cursor turns to grab</div>| cursor-grab | ```<div class="border p-1 pl-3 cursor-grab">Hover me, cursor turns to grab</div>```|
+| <div class="border p-1 pl-3 cursor-grabbing">Hover me, cursor turns to grabbing</div>| cursor-grabbing | ```<div class="border p-1 pl-3 cursor-grabbing">Hover me, cursor turns to grabbing</div>```|
+| <div class="border p-1 pl-3 cursor-zoom-in"> Hover me, cursor magnifying glass [+]</div>| cursor-zoom-in | ```<div class="border p-1 pl-3 cursor-zoom-in"> Hover me, cursor turns to magnifying glass [+]</div>```|
+| <div class="border p-1 pl-3 cursor-zoom-out"> Hover me, cursor magnifying glass [-] </div>| cursor-zoom-out | ```<div class="border p-1 pl-3 cursor-zoom-out"> Hover me, cursor turns to magnifying glass [-] </div>```|
+| <div class="border p-1 pl-3 cursor-wait">Hover me, cursor waiting </div>| cursor-wait | ```<div class="border p-1 pl-3 cursor-wait">Hover me, cursor turns to spinner or hourglass depending on the browser </div>```|
+| <div class="border p-1 pl-3 cursor-help">Hover me, cursor help icon</div>| cursor-help | ```<div class="border p-1 pl-3 cursor-help">Hover me, cursor turns to help icon</div>```|
+| <div class="border p-1 pl-3 cursor-default">Makes the cursor to be the default arrow.</div>| cursor-default | ```<div class="border p-1 pl-3 cursor-default">Makes the cursor to be the default arrow.</div>```|
+| <div class="border p-1 pl-3 cursor-no-select">Makes the cursor unable to select text.</div>| cursor-no-select | ```<div class="border p-1 pl-3 cursor-no-select">Makes the cursor unable to select text.</div>```|
+{: .table .example-table }
+
+# Display
+
+## Responsive Hide and Show
+
+|  Class     | 415px | 576px | 768px | 992px | 1200px | 1400px |
+|:---          | :--   | :---: | :---: | :---: | :---: | :---:   | 
+|desktop       |       |       |       |       | **X** | **X**   |
+|tablet        |       |       | **X** | **X** |       |         |
+|mobile        | **X** | **X** |       |       |       |         |
+|small-screen  | **X** | **X** |  **X**|       |       |         |
+|large-screen  |       |       |       |**X**  |**X**  |**X**    |
+{: .table }
+
+ <div class="column mt-3">
+    <span class="mb-3">Resize the screen to see it in action:</span>
+    <div class="mobile bg-danger p-3">Mobile</div>
+    <div class="tablet bg-accent p-3">Tablet</div>
+    <div class="desktop bg-primary p-3">desktop</div>
+    <div class="small-screen bg-gray p-3">small-screen</div>
+    <div class="large-screen bg-gray-dark p-3">large-screen</div>
+</div>
+      
 
 # Colors
 
