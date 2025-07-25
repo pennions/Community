@@ -13,6 +13,7 @@ toc:
     - Cursors
     - =Display
     - Responsive Hide and Show
+    - Display utility classes
     - =Colors
     - Text and Icons
     - Borders
@@ -244,6 +245,7 @@ These are the default sizes, you can adjust them with CSS variables:
 # Display
 
 ## Responsive Hide and Show
+{: .mt-3 }
 
 |  Class     | 415px | 576px | 768px | 992px | 1200px | 1400px |
 |:---          | :--   | :---: | :---: | :---: | :---: | :---:   | 
@@ -262,6 +264,23 @@ These are the default sizes, you can adjust them with CSS variables:
     <div class="small-screen bg-gray p-3">small-screen</div>
     <div class="large-screen bg-gray-dark p-3">large-screen</div>
 </div>
+
+## Display utility classes
+{: .mt-3 }
+
+| Class                 | Description  |
+|:---                   | :--          |
+| no-scroll             | Sets overflow to hidden |
+| text-no-wrap          | Sets whitespace to nowrap |
+| sticky                | Sets the current element to sticky with a z-index of 1000 and auto-height |
+| inline-block          | Sets display to inline-block |
+| inline-flex           | Sets display to inline-flex |
+| block                 | Sets display to block |
+| fit-content           | Sets max width to fit-content |
+| list-style-none       | Sets the elements list style to none |
+| hidden                | Sets the elements display to none |
+{: .table }
+
       
 
 # Colors
