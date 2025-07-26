@@ -15,9 +15,9 @@ toc:
     - Responsive Hide and Show
     - Display utility classes
     - =Colors
+    - Backgrounds
     - Text and Icons
     - Borders
-    - Backgrounds
 --- 
 
 # Utilities
@@ -224,7 +224,9 @@ These are the default sizes, you can adjust them with CSS variables:
 | <div class="border-left py-5 px-3 my-3 mr-3">Element with border on the left</div>     | border-left   |```<div class="border-left py-5 px-3">Element with border on the left</div>``` |
 | <div class="border-right py-5 px-3 my-3 mr-3">Element with border on the right</div>   | border-right   |```<div class="border-right py-5 px-3">Element with border on the right</div>``` |
 | <div class="border-bottom py-5 px-3 my-3 mr-3">Element with border on the bottom</div> | border-bottom   |```<div class="border-bottom py-5 px-3">Element with border on the bottom</div>``` |
+| <div class="border border-thick py-5 px-3 my-3 mr-3">Element with a thick border</div> | border or border-* + border-thick   |```<div class="border border-thick py-5 px-3">Element with a thick border</div>``` |
 {: .table .example-table }
+
 
 # Cursors
 
@@ -285,8 +287,75 @@ These are the default sizes, you can adjust them with CSS variables:
 
 # Colors
 
+## Backgrounds
+
+Background colors have a matching 'color-on-' variable, so they automatically have a good contrasting text. You can override this with the text utilities.
+
+| Example        |Class                   |  Code                                                        | 
+| :------------- |:---------------------- | :-------------------------                                   |
+|<div class="p-5 bg-primary">Text to test background text color</div>| bg-primary | ```<div class="p-5 bg-primary">Text to test background text color</div>```|
+|<div class="p-5 bg-danger">Text to test background text color</div>| bg-danger | ```<div class="p-5 bg-danger">Text to test background text color</div>```|
+|<div class="p-5 bg-success">Text to test background text color</div>| bg-success | ```<div class="p-5 bg-success">Text to test background text color</div>```|
+|<div class="p-5 bg-error">Text to test background text color</div>| bg-error | ```<div class="p-5 bg-error">Text to test background text color</div>```|
+|<div class="p-5 bg-warning">Text to test background text color</div>| bg-warning | ```<div class="p-5 bg-warning">Text to test background text color</div>```|
+|<div class="p-5 bg-gray">Text to test background text color</div>| bg-gray | ```<div class="p-5 bg-gray">Text to test background text color</div>```|
+|<div class="p-5 bg-black">Text to test background text color</div>| bg-black | ```<div class="p-5 bg-black">Text to test background text color</div>```|
+|<div class="p-5 bg-white">Text to test background text color</div>| bg-white | ```<div class="p-5 bg-white">Text to test background text color</div>```|
+|<div class="p-5 bg-yellow">Text to test background text color</div>| bg-yellow | ```<div class="p-5 bg-yellow">Text to test background text color</div>```|
+|<div class="p-5 bg-orange">Text to test background text color</div>| bg-orange | ```<div class="p-5 bg-orange">Text to test background text color</div>```|
+|<div class="p-5 bg-red">Text to test background text color</div>| bg-red | ```<div class="p-5 bg-red">Text to test background text color</div>```|
+|<div class="p-5 bg-green">Text to test background text color</div>| bg-green | ```<div class="p-5 bg-green">Text to test background text color</div>```|
+{: .table .example-table }
+
+
 ## Text and Icons
+
+The described modifiers all apply a color on the ```color``` css property. If your icon also use this, like SVG, it will be compatible. The background sometimes has a gray or black color, just to illustrate the text color.
+
+| Example        |Class                   |  Code                                                        | 
+| :------------- |:---------------------- | :-------------------------                                   |
+|<div class="p-5 text-primary">Text to test text color</div>| text-primary | ```<div class="p-5 text-primary">Text to test text color</div>```|
+|<div class="p-5 text-danger">Text to test text color</div>| text-danger | ```<div class="p-5 text-danger">Text to test text color</div>```|
+|<div class="p-5 text-success bg-gray">Text to test text color</div>| text-success | ```<div class="p-5 text-success">Text to test text color</div>``` **\* Note** background color only for contrast|
+|<div class="p-5 text-error bg-gray">Text to test text color</div>| text-error | ```<div class="p-5 text-error">Text to test text color</div>``` **\* Note** background color only for contrast|
+|<div class="p-5 text-warning bg-gray">Text to test text color</div>| text-warning | ```<div class="p-5 text-warning">Text to test text color</div>``` **\* Note** background color only for contrast |
+| <div class="p-5 text-black">Text to test text color</div>| text-gray | ```<div class="p-5 text-gray">Text to test text color</div>```|
+|<div class="p-5 text-black">Text to test text color</div>| text-black | ```<div class="p-5 text-black">Text to test text color</div>```|
+|<div class="p-5 text-white bg-black">Text to test text color</div>| text-white | ```<div class="p-5 text-white">Text to test text color</div>``` **\* Note** background color only for contrast|
+|<div class="p-5 text-yellow">Text to test text color</div>| text-yellow | ```<div class="p-5 text-yellow">Text to test text color</div>```|
+|<div class="p-5 text-orange">Text to test text color</div>| text-orange | ```<div class="p-5 text-orange">Text to test text color</div>```|
+|<div class="p-5 text-red">Text to test text color</div>| text-red | ```<div class="p-5 text-red">Text to test text color</div>```|
+|<div class="p-5 text-green">Text to test text color</div>| text-green | ```<div class="p-5 text-green">Text to test text color</div>```|
+{: .table .example-table }
 
 ## Borders
 
-## Backgrounds
+| Example        |Class                   |  Code                                                        | 
+| :------------- |:---------------------- | :-------------------------                                   |
+|<div class="p-5 border border-primary"></div>| border-primary | ```<div class="p-5 border border-primary"></div>```|
+|<div class="p-5 border border-danger"></div>| border-danger | ```<div class="p-5 border border-danger"></div>```|
+|<div class="bg-gray p-1"><div class="p-5 border border-success"></div></div>| border-success | ```<div class="p-5 border border-success"></div>``` **\* Note** background color only for contrast|
+|<div class="bg-gray p-1"><div class="p-5 border border-error"></div></div>| border-error | ```<div class="p-5 border border-error"></div>``` **\* Note** background color only for contrast|
+|<div class="bg-gray p-1"><div class="p-5 border border-warning"></div></div>| border-warning | ```<div class="p-5 border border-warning"></div>``` **\* Note** background color only for contrast |
+|<div class="p-5 border border-gray"></div>| border-gray | ```<div class="p-5 border border-gray"></div>```|
+|<div class="p-5 border border-black"></div>| border-black | ```<div class="p-5 border border-black"></div>```|
+|<div class="bg-black p-1"><div class="p-5 border border-white"></div></div>| border-white | ```<div class="p-5 border border-white"></div>``` **\* Note** background color only for contrast|
+|<div class="p-5 border border-yellow"></div>| border-yellow | ```<div class="p-5 border border-yellow"></div>```|
+|<div class="p-5 border border-orange"></div>| border-orange | ```<div class="p-5 border border-orange"></div>```|
+|<div class="p-5 border border-red"></div>| border-red | ```<div class="p-5 border border-red"></div>```|
+|<div class="p-5 border border-green"></div>| border-green | ```<div class="p-5 border border-green"></div>```|
+|||
+|**With border-thick** | *So you can see the colors better*|
+|<div class="p-5 border border-thick border-primary"></div>| border-primary | ```<div class="p-5 border border-thick border-primary"></div>```|
+|<div class="p-5 border border-thick border-danger"></div>| border-danger | ```<div class="p-5 border border-thick border-danger"></div>```|
+|<div class="bg-gray p-1"><div class="p-5 border border-thick border-success"></div></div>| border-success | ```<div class="p-5 border border-thick border-success"></div>``` **\* Note** background color only for contrast|
+|<div class="bg-gray p-1"><div class="p-5 border border-thick border-error"></div></div>| border-error | ```<div class="p-5 border border-thick border-error"></div>``` **\* Note** background color only for contrast|
+|<div class="bg-gray p-1"><div class="p-5 border border-thick border-warning"></div></div>| border-warning | ```<div class="p-5 border border-thick border-warning"></div>``` **\* Note** background color only for contrast |
+|<div class="p-5 border border-thick border-gray"></div>| border-gray | ```<div class="p-5 border border-thick border-gray"></div>```|
+|<div class="p-5 border border-thick border-black"></div>| border-black | ```<div class="p-5 border border-thick border-black"></div>```|
+|<div class="bg-black p-1"><div class="p-5 border border-thick border-white"></div></div>| border-white | ```<div class="p-5 border border-thick border-white"></div>``` **\* Note** background color only for contrast|
+|<div class="p-5 border border-thick border-yellow"></div>| border-yellow | ```<div class="p-5 border border-thick border-yellow"></div>```|
+|<div class="p-5 border border-thick border-orange"></div>| border-orange | ```<div class="p-5 border border-thick border-orange"></div>```|
+|<div class="p-5 border border-thick border-red"></div>| border-red | ```<div class="p-5 border border-thick border-red"></div>```|
+|<div class="p-5 border border-thick border-green"></div>| border-green | ```<div class="p-5 border border-thick border-green"></div>```|
+{: .table .example-table }
