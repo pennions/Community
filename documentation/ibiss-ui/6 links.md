@@ -4,7 +4,6 @@ index: ibiss-ui
 icon: "IbissUI.png"
 title: Links
 layout: template
-filename: links
 --- 
 
 # Links

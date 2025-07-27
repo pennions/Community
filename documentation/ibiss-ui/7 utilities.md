@@ -4,7 +4,6 @@ index: ibiss-ui
 icon: "IbissUI.png"
 title: Utilities
 layout: template
-filename: utilities
 toc: 
     - Paddings
     - Margins

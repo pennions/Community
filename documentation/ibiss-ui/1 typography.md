@@ -4,7 +4,6 @@ index: ibiss-ui
 icon: "IbissUI.png"
 title: Typography
 layout: template
-filename: typography
 toc: 
     - Other classes and examples
 --- 

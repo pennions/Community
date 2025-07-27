@@ -4,7 +4,6 @@ index: ibiss-ui
 icon: "IbissUI.png"
 title: Inputs
 layout: template
-filename: inputs
 --- 
 
 # Links

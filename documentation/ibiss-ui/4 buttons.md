@@ -4,7 +4,6 @@ index: ibiss-ui
 icon: "IbissUI.png"
 title: Buttons
 layout: template
-filename: buttons
 --- 
 
 # Buttons
