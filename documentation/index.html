@@ -14,7 +14,7 @@
       .ibissui-logo,
       .kea-logo {
         height: 80%;
-        max-height:250px;
+        max-height: 250px;
       }
 
       .card {
@@ -62,18 +62,30 @@
       }
 
       body {
-        background-image: url("/Community/images/pexels-sonny-vermeer-505472791-20061678.jpg");
-        background-size:cover;
+        background-image: url('/Community/images/pexels-sonny-vermeer-505472791-20061678.jpg');
+        background-size: cover;
+      }
+
+      @media only screen and (max-width: 400px) {
+        .index {
+          min-height: 100dvh;
+          height: 100%;
+        }
+
+        .ibissui-logo,
+        .kea-logo {
+          height: 60%;
+        }
       }
     </style>
   </head>
   <body>
     <main class="index column">
-      <header class="p-5 row align-center gap-5 shadow-bottom bg-white">
+      <header class="p-5 row align-center gap-5 shadow-bottom bg-white mb-5">
         <h1>Ibiss UI Documentation</h1>
       </header>
 
-      <section class="card-row row justify-center align-center gap-5">
+      <section class="card-row row justify-center align-center gap-5 mb-5">
         <div class="card shadow">
           <a
             href="ibiss-ui/"
@@ -87,7 +99,9 @@
             href="kea-components/"
             class="link-card column align-center justify-around">
             <img src="/Community/images/KeaLogo.png" class="kea-logo" />
-            <span class="tag bg-white p-1 px-2 shadow">Go to Kea Components</span>
+            <span class="tag bg-white p-1 px-2 shadow"
+              >Go to Kea Components</span
+            >
           </a>
         </div>
       </section>
