@@ -1,7 +1,7 @@
 ---
 chapter: Ibiss UI
 icon: "IbissUI.png"
-title: Ibiss UI CSS
+title: Ibiss UI
 layout: chapter-index
 filename: index
 --- 

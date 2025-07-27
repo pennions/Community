@@ -4,7 +4,6 @@ index: ibiss-ui
 icon: "IbissUI.png"
 title: Flex layout
 layout: template
-filename: flex-layout
 toc:
     - Responsive prefixes explained
     - =Classes

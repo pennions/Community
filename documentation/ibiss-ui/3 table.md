@@ -4,7 +4,6 @@ index: ibiss-ui
 icon: "IbissUI.png"
 title: Table
 layout: template
-filename: table
 toc:
     - =Examples
     - Default
