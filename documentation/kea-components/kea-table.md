@@ -17,6 +17,7 @@ toc:
     - Buttons
     - Sorting
     - Custom cell functions
+    - Custom row function
     - Configuration
     - Use with a framework like Vue
 --- 
@@ -33,6 +34,7 @@ Kea Table has been designed so that you can use the styling framework or any jav
 * Pagination
 * Column order and column choice
 * Custom cell functions
+* Custom row function
 * Able to add classes
 * Lifecycle hooks
 * Add caption / footer
@@ -461,6 +463,46 @@ you get the processed version. This is due to the fact that the table is pre-pro
 **object** <br/>
 The complete row object, so you can use any values, even the ones you do not have in the ```header```.
 
+# Custom row function
+A custom row function allows you to customize the complete row, allowing adding classes to the row and also have full control over all tablecells!
+
+
+```javascript
+const tableOptions = {
+    headers: { ... },
+    content: { ... },
+
+    /** You get an empty tablerow html element, the columns (property headers) to access the row data */
+    rowFunction: (HTMLElement tr, string[] columns, rowObject) => {},         
+    ...
+}
+```
+
+**Function signature** <br/>
+You can use ```function() {} or () => {}```, here is an example:
+
+```javascript
+const tableOptions = {
+    headers: { ... },
+    content: { ... },
+    rowFunction: (row, columns, object) => {
+        ...
+    }
+}
+```
+
+**row** <br/>
+A ```<tr></tr>``` element, without any table cells. 
+
+**columns** <br/>
+An array of keys of the object that is used for this row. if you access ```object[property]``` you get the processed value, 
+so if you access a property that also has a custom function and you access that from the object, 
+you get the processed version. This is due to the fact that the table is pre-processed to enable full filtering.
+
+**object** <br/>
+The complete row object, so you can use any values, even the ones you do not have in the ```header```.
+
+
 # Configuration
 Complete overview of the options you can pass into the ```Render()``` function:
 
@@ -517,6 +559,12 @@ const tableOptions = {
                                 *  Key is the exact JSON object key, Value is a function (value, prop, object), must return a string,
                                 *  which will be put in the innerHTML of the td
                                 */
+
+    rowFunction: function,      /** [Optional] 
+                                 * Function (HTMLElement tr, array<string> columns, row data)
+                                 * Can be function() {} or () => {}
+                                 * Allows full customization of the row.
+                                 */
 
     sortingFunction: function, /** [Optional]
                                 *  Object, Key: Value
