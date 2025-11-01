@@ -525,13 +525,13 @@ const tableOptions = {
     buttonBar: {},             /** [Optional] Adds a button bar.
                                 *  Object   {
                                 *              location: left/right,
-                                *              tableRowClassList: string[] which classes to add to the table row, 
+                                *              tableRowClassList: string[], which classes to add to the table row, 
                                 *              for example to make the buttons only available on hover
                                 * 
-                                *              rowIdProperty: the exact name of the object key that will be emitted 
-                                *              when the button is clicked
+                                *              selectionProperty: the exact name of the object key that will be emitted 
+                                *              when the button is clicked,
                                 * 
-                                *              buttonBarClassList: string[] which classes to add to the buttonbar div.
+                                *              buttonBarClassList: string[], which classes to add to the buttonbar div.
                                 *              buttons: [
                                 *                          {
                                 *                              innerHTML: the html to display in the button
